@@ -52,8 +52,6 @@ present(alert, animated: true, completion: nil)
 - Allez dans les settings du projet: icone bleue tout en haut de l'arborescence
 - Dans les orientations, autoriser seulement "landscape left" et "landscape right"
 - Ajouter tous les éléments de base de l'interface: labels, sliders, buttons:
-![image](images/layout_2.png)
-![image](images/layout_3.png)
 - Pour le bouton info, setter le "type" sur "Info Light"
 - Pour le slider, modifier les valeurs de départ, d'arrivée et actuelles sur: 1, 100, 50
 
