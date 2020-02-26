@@ -55,7 +55,7 @@ present(alert, animated: true, completion: nil)
 - Pour le bouton info, setter le "type" sur "Info Light"
 - Pour le slider, modifier les valeurs de départ, d'arrivée et actuelles sur: 1, 100, 50
 
-![reference](images/layout_2.gif)
+![reference](images/layout_2.png)
 ![reference](images/layout_UIKit.gif)
 
 ## Gameplay
