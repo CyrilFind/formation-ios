@@ -4,10 +4,10 @@
 
 - Créer une app "Master Detail" en choississant SwiftUI
 - Lancer l'app pour tester un peu
-- Créer une classe `Task`:
+- Créer une struct `Task`:
 
 ```swift
-class Task : Identifiable {
+struct Task {
     var id: String
     var title: String
     var description: String
