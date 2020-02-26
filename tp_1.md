@@ -207,4 +207,4 @@ dismiss(animated: true, completion: nil)
 
 ## Auto Layout
 
-Notre app n'est actuellement pas du tout "Responsive": utilisez des contraintes pour respecter toutes les tailles d'écran en commençant par le 2e écran (plus simple)
+Votre app n'est actuellement pas du tout "Responsive": utilisez des [contraintes Auto-Layout](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithConstraintsinInterfaceBuidler.html#//apple_ref/doc/uid/TP40010853-CH10-SW1) pour respecter toutes les tailles d'écran en commençant par le 2e écran (plus simple)

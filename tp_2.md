@@ -3,10 +3,10 @@
 
 ## Création
 
-- Créer un projet vide "Single View App" nommée "Bull's Eyes SwiftUI"
+- Créer un projet vide "Single View App" nommée "Bull's Eyes SwiftUI" en sélectionnant l'option "SwiftUI"
 - Le lancer une première fois: ▶
 - Utilisez (`cmd + click`) pour afficher la popup de modification
-- Personnaliser le texte, la couleur, passer en gras:
+- Personnaliser le texte, la couleur, passer en gras
 - Ajouter un bouton: "Hit me !"
 - Ajouter une action à ce bouton pour `print` un message dans la console
 - Ajouter un `state` dans `ContentView`:
@@ -15,35 +15,42 @@
 @State var alertIsVisible = false
 ```
 
-- Changer sa valeur dans l'action du bouton:
+- Changer sa valeur dans la lambda `action` du `Button`:
 
 ```swift
  self.alertIsVisible = true
  ```
 
-- En dessous du `Button(...){...}`, ajouter:
+- À la fin du bloc `body`, ajouter:
 
 ```swift
-.alert(isPresented: $alertIsVisible) { () -> Alert in
-  return Alert(
-    title: ...,
-    message:...,
-    dismissButton: .default(Text(...))
-  )
+.alert(isPresented: $alertIsVisible) {
+    return Alert(
+      title: Text(...),
+      message: Text(...),
+      dismissButton: .default(Text(...))
+    )
 }
 ```
 
+- `$alertIsVisible` sera automatiquement passé à `false` en dismissant l'`Alert`
+
 - Dans les settings du projet, décocher l'orientation portrait
 - Faire pivoter le Simulator
-- Dans `ContentView_Preview`, ajouter:
+- Dans `ContentView_Preview`, spécifier la taille d'écran pour la preview ([reférence](https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions)):
 
 ```swift
-.previewLayout(width: 869, height: 414) () //<= iphone 10R )
+.previewLayout(width: 896, height: 414) () //<= iphone 11 Max Pro )
 ```
 
-- Passer le volet Preview d'XCode en dessus du volet code: `Editor > Layout > Canvas on bottom`
-- Ajouter les Views et utiliser l'IDE pour ne pas trop coder manuellement:
-utiliser le bouton "+" et drag & drop (dans le canvas ou dans le code), `cmd + click`, "embed in HStack/Button/...", `Spacer()`, `.padding(.bottom, 20)`
+- Passer le volet Preview d'XCode en dessous du volet code: `Editor > Layout > Canvas on bottom`
+- Ajouter les `View` et utiliser l'IDE pour ne pas trop coder manuellement: 
+  - Utilisez le bouton "+"
+  - Utilisez le drag & drop (dans le canvas ou dans le code)
+  - Utilisez la popup `cmd + click`
+  - Encapsuler des vues dans une autre: "embed in HStack/Button/..."
+  - Espacer des vues: `Spacer()`
+  - AJouter du padding: `.padding(.bottom, 20)`
 
 ![Views](images/layout_2.png)
 ![Stacks](images/layout_3.png)
@@ -70,33 +77,35 @@ let interpolatedString = "Hello \(name)!"
 
 - Rendre cette valeur plus "humaine" avec `.rounded()` et la stocker dans une variable `let roundedValue: Int` avec un cast
 
-- Ajouter une méthode:
+- Ajouter une méthode qui renvoie les points du tour courant, avec une fausse valeur pour l'instant:
 
 ```swift
- func pointsForCurrentRound()  -> Int { return 999 }
+ func pointsForCurrentRound()  -> Int {
+   // 100 - la différence entre la target et la valeur donnée
+   return 999
+  }
 ```
 
 - Afficher sa valeur dans la seconde ligne de l'alert
-
 - Ajouter une variable d'état qui sera le nombre à cibler, généré aléatoirement:
 
 ```swift
 @state var target = Int.random(1..100)
 ```
 
-- Définir une méthode `scoreThisRound()` qui soustrait à 100 la valeur absolue de la différence entre la valeur touchée et la valeur cible
-- Créér une méthode  `sliderValueRounded()` pour ne pas dupliquer de code
-- Afficher le score total en bas
+- Implémenter le calcul de `pointsForCurrentRound(`
+- Créer une méthode  `sliderValueRounded()` pour ne pas dupliquer de code
+- Afficher le score total en bas, avec une autre variable `@State`:
 
 ```swift
 @State var score = ...
 ```
 
-- Changer la target random a chaque tour (dans le dismiss de l'alert)
+- Changer la target random a chaque tour (dans le `dismiss` de l'alert)
 - Afficher le numéro du round
 - Afficher 3 différents textes dans l'alerte en fonction du score
-- Ajouter un bonus de 100pts en cas de *perfect* et 50pts en cas de *perfect-1*
-- Ajouter la fonctionalité "Start Over"
+- Ajouter un bonus de 100 points en cas de *perfect* et 50 points en cas de *perfect-1*
+- Ajouter la fonctionnalité "Start Over"
 
 ## Styling
 
@@ -104,8 +113,7 @@ let interpolatedString = "Hello \(name)!"
 
 - Ajouter les images dans "assets"
 - ajouter un background: `.background(Image("Background"), alignement: .center)`
-- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` (iosfontd.com) avec `.font(Font.custom(...))
-
+- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` ([référence](iosfontd.com)) avec `.font(Font.custom(...))`
 - Faire pareil sur les autres textes, sans copier coller le même code partout: pour cela il faut créer un objet `LabelStyle`
 
 ```swift
@@ -121,16 +129,17 @@ struct LabelStyle: ViewModifier {
 ```
 
 - Faire de même pour tous les labels de chiffres: `ValueStyle`:
+
 ![style](images/styling_value_texts.png)
 
-- Pour ne pas dupliquer la partie `.shadow(color: Color.black, radius: 5, x: 2, y: 2)`, faire utiliser aux deux styles un style `Shadow`
+- Pour ne pas dupliquer la partie `.shadow(color: Color.black, radius: 5, x: 2, y: 2)`, faire utiliser aux deux styles un style `ShadowStyle`
 - Styliser les boutons:
   - `LargeTextStyle` avec `size: 18` pour Hit Me
   - `SmallTextStyle` avec `size: 12` pour les autres
   - Background: `.background(Image("Button")`
-  - Shadow
+  - ShadowStyle
   - Texte noir
-  - Icones:
+  - Icônes:
     - ajouter une `HStack` a l'interieur des boutons
     - `.accentColor` pour la couleur des icones
 
@@ -149,7 +158,7 @@ contentView = ContentView()
 contentView = NavigationView {
   ContentView()
 }
-.navigationViewStyle(StackNavigationViewStyle)
+.navigationViewStyle(StackNavigationViewStyle())
 ```
 
 - Ajouter des titres aux vues:
@@ -157,7 +166,9 @@ contentView = NavigationView {
   - dans AboutView: `.navigationEyesTitle("About")`
 - Changer le `Button()` info par un `NavigationLink(destination: AboutView())` avec le même contenu
 - Styliser `AboutView`:
+
 ![style](images/styling_about_page.png)
 
-- Mettre toute la VStack dans un Group avec le Background
+- Mettre toute la `VStack` dans un `Group` pour setter le `.background()` dessus afin que le background prenne toute la place disponible.
 - Ajouter une icône à l'application
+- Tester sur d'autres tailles d'écrans: normalement, ça ne devrait rien changer !
