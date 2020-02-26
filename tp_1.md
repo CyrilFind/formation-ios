@@ -118,8 +118,7 @@ Actuellement la valeur cible ne change jamais:
   - donner une valuer cible aléatoire
   - reset la valeur actuelle à 50
   - reset la valeur du slider à 50
-- Utilisez cette méthode au démarrage et à la fin de `showAlert`
-
+- Utilisez cette méthode une première fois au début du jeu et à la fin de chaque appel de `showAlert`
 - Afficher cette valeur cible dans le label: utilisez un `IBOutlet` et mettez le texte à jour à chaque round
 - Affichez maintenant les points gagnés à chaque manche: `100 - abs(targetValue - roundedSliderValue)`
 - Accumulez ces points à chaque round dans une propriété `score`
@@ -146,8 +145,8 @@ let action = UIAlertAction(title: "Awesome", style: .default, handler: {
 
 ## Navigation
 
-- Créer un 2e ViewController: `FIle > New > File... > CocoaTouch Class` et l'appeler `AboutViewController`
-- Ajoutez le dans le StoryBoard
+- Créer un 2e ViewController: `File > New > File... > CocoaTouch Class` et l'appeler `AboutViewController`
+- Ajoutez le dans le StoryBoard (avec le bouton "+")
 - Ajoutez dedans une TextView et décochez son attribut "Editable"
 - AJouter un bouton "Close" en dessous
 - Ajoutez une "Segue" en appuyant sur `control` puis cliquer sur le bouton "info" du 1er écran et glisser jusqu'au 2e: dans la popup qui s'affiche, choisir "Present Modally"
