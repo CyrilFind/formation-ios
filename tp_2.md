@@ -3,7 +3,7 @@
 
 ## Création
 
-- Créer un projet vide "Single View App"
+- Créer un projet vide "Single View App" nommée "Bull's Eyes SwiftUI"
 - Le lancer une première fois: ▶
 - Utilisez (`cmd + click`) pour afficher la popup de modification
 - Personaliser le texte, la couleur, passer en gras:

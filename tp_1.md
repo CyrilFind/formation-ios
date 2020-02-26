@@ -2,28 +2,28 @@
 
 ## Création
 
-- Créer une "Single View App" nommée "Bull's Eyes"
-- Run
-- Ouvrir MainStoryboard: choisir iPhone SE, passer en paysage
+- Créer une "Single View App" nommée "Bull's Eyes UIKit"
+- Lancez la ▶
+- Ouvrez Main.Storyboard
+- Choisir dans la visualisation le même iPhone que dans le Simulator, passer en paysage.
 - Cliquer sur le bouton  (un carré dans un rond) pour ajouter un bouton
 - Changez son texte: `"Hit Me !"`
 - Dans ViewController, ajouter:
 
 ```swift
 @IBAction func showAlert() {
-    print("Hello")
+  print("Hello")
 }
 ```
 
 - Dans le storyboard, appuyez sur `control` et cliquez sur le bouton puis glissez la souris jusqu'à l'icône jaune juste au dessus (ou dans le volet de gauche: "View Controller")
-
-- Dans la popoup qui va s'ouvrir, cliques sur `showAlert`: c'est la méthode que l'on vient de créer !
-- Dans le volet de droite, dans le dernier onglet  (une flèche dans un cercle), vérifiez que "Touch up Inside" est bien relié à `showALert`
+- Dans la popoup qui va s'ouvrir, cliquer sur `showAlert()`: c'est la méthode que l'on vient de créer
+- Dans le volet de droite, dans le dernier onglet  (une flèche dans un cercle), vérifiez que "Touch up Inside" est bien relié à `showAlert()`
 - Lancez l'app et vérifiez que la console affiche bien "Hello !"
 
 ## Interaction
 
-- Dans `showAlert`, retirez le code et créez une Alert (popup):
+- Dans `showAlert()`, retirez le `print` et créez une Alert (popup):
 
 ```swift
 let alert = UIAlertController(title: "Hello World!", message: "This is my first App!", prefferedStyle: .alert)
@@ -51,13 +51,15 @@ present(alert, animated: true, completion: nil)
 
 - Allez dans les settings du projet: icone bleue tout en haut de l'arborescence
 - Dans les orientations, autoriser seulement "landscape left" et "landscape right"
-- Ajouter tous les éléments de base de l'interface: labels, sliders, buttons
+- Ajouter tous les éléments de base de l'interface: labels, sliders, buttons:
+![image](images/layout_2.png)
+![image](images/layout_3.png)
 - Pour le bouton info, setter le "type" sur "Info Light"
 - Pour le slider, modifier les valeurs de départ, d'arrivée et actuelles sur: 1, 100, 50
 
 ## Gameplay
 
-- Ajouter une méthode `sliderMoved`:
+- Ajouter une méthode `sliderMoved()`:
 
 ```swift
 @IBAction func sliderMoved(_ slider: UISlider) {
