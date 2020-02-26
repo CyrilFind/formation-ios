@@ -100,6 +100,8 @@ let interpolatedString = "Hello \(name)!"
 
 ## Style et Images
 
+![image](images/layout_3.png)
+
 - Ajouter les images dans "assets"
 - ajouter un background: `.background(Image("Background"), alignement: .center)`
 - Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` (iosfontd.com) avec `.font(Font.custom(...))`
