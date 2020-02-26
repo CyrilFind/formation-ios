@@ -2,7 +2,7 @@
 
 ## Création
 
-- Créer une "Single View App" nommée "Bull's Eyes UIKit"
+- Créer une "Single View App" nommée "Bull's Eyes UIKit" avec l'option "StoryBoard"
 - Lancez la ▶
 - Ouvrez Main.Storyboard
 - Choisir dans la visualisation le même iPhone que dans le Simulator, passer en paysage.
