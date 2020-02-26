@@ -1,5 +1,7 @@
 # TP 1: UI Kit
 
+![Résultat final](images/layout_UIKit.gif)
+
 ## Création
 
 - Créer une "Single View App" nommée "Bull's Eyes UIKit" avec l'option "StoryBoard"
@@ -55,8 +57,7 @@ present(alert, animated: true, completion: nil)
 - Pour le bouton info, setter le "type" sur "Info Light"
 - Pour le slider, modifier les valeurs de départ, d'arrivée et actuelles sur: 1, 100, 50
 
-![reference](images/layout_2.png)
-![reference](images/layout_UIKit.gif)
+![layout](images/layout_2.png)
 
 ## Gameplay
 

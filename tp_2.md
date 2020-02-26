@@ -45,8 +45,8 @@
 - Ajouter les Views et utiliser l'IDE pour ne pas trop coder manuellement:
 utiliser le bouton "+" et drag & drop (dans le canvas ou dans le code), `cmd + click`, "embed in HStack/Button/...", `Spacer()`, `.padding(.bottom, 20)`
 
-![image](images/layout_2.png)
-![image](images/layout_3.png)
+![Views](images/layout_2.png)
+![Stacks](images/layout_3.png)
 
 ## Gameplay
 
@@ -100,7 +100,7 @@ let interpolatedString = "Hello \(name)!"
 
 ## Style et Images
 
-![image](images/layout_3.png)
+![Résultat final](images/layout_SwiftUI.png)
 
 - Ajouter les images dans "assets"
 - ajouter un background: `.background(Image("Background"), alignement: .center)`
