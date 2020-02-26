@@ -6,7 +6,7 @@
 - Créer un projet vide "Single View App" nommée "Bull's Eyes SwiftUI"
 - Le lancer une première fois: ▶
 - Utilisez (`cmd + click`) pour afficher la popup de modification
-- Personaliser le texte, la couleur, passer en gras:
+- Personnaliser le texte, la couleur, passer en gras:
 - Ajouter un bouton: "Hit me !"
 - Ajouter une action à ce bouton pour `print` un message dans la console
 - Ajouter un `state` dans `ContentView`:
@@ -98,14 +98,15 @@ let interpolatedString = "Hello \(name)!"
 - Ajouter un bonus de 100pts en cas de *perfect* et 50pts en cas de *perfect-1*
 - Ajouter la fonctionalité "Start Over"
 
-## Style et Images
+## Styling
 
 ![Résultat final](images/layout_SwiftUI.png)
 
 - Ajouter les images dans "assets"
 - ajouter un background: `.background(Image("Background"), alignement: .center)`
-- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` (iosfontd.com) avec `.font(Font.custom(...))`
-- Faire pareil sur les autres textes, sans copier coller le meme code partout: pour cela il faut créer un objet `LabelStyle`
+- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` (iosfontd.com) avec `.font(Font.custom(...))
+
+- Faire pareil sur les autres textes, sans copier coller le même code partout: pour cela il faut créer un objet `LabelStyle`
 
 ```swift
 // Définition
@@ -119,7 +120,9 @@ struct LabelStyle: ViewModifier {
 .modifier(LabelStyle())
 ```
 
-- Faire de même pour tous les labels de chiffres: `ValueStyle`
+- Faire de même pour tous les labels de chiffres: `ValueStyle`:
+![style](images/styling_value_texts.png)
+
 - Pour ne pas dupliquer la partie `.shadow(color: Color.black, radius: 5, x: 2, y: 2)`, faire utiliser aux deux styles un style `Shadow`
 - Styliser les boutons:
   - `LargeTextStyle` avec `size: 18` pour Hit Me
@@ -144,15 +147,17 @@ contentView = ContentView()
 
 // Après
 contentView = NavigationView {
-    ContentView()
-  }
-  .navigationViewStyle(StackNavigationViewStyle)
+  ContentView()
+}
+.navigationViewStyle(StackNavigationViewStyle)
 ```
 
 - Ajouter des titres aux vues:
   - dans ContentView: `.navigationEyesTitle("BullsEyes")`
   - dans AboutView: `.navigationEyesTitle("About")`
-- Changer le `Button()` info par un `NavigationLink(destination: AboutView())` avec le meme contenu
-- Styliser `AboutView`
+- Changer le `Button()` info par un `NavigationLink(destination: AboutView())` avec le même contenu
+- Styliser `AboutView`:
+![style](images/styling_about_page.png)
+
 - Mettre toute la VStack dans un Group avec le Background
-- Ajouter une icone à l'application
+- Ajouter une icône à l'application

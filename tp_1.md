@@ -57,7 +57,8 @@ present(alert, animated: true, completion: nil)
 - Pour le bouton info, setter le "type" sur "Info Light"
 - Pour le slider, modifier les valeurs de départ, d'arrivée et actuelles sur: 1, 100, 50
 
-![layout](images/layout_2.png)
+Vous pouvez vous aider de cette image (mais mettez des `Label` au lieu des `Text`):
+![Layout](images/layout_2.png)
 
 ## Gameplay
 
@@ -83,7 +84,7 @@ intValue = Int(floatValue)
 ```
 
 - Changez le message de l'alert pour afficher le résultat
-- Arrondissez la valeur (le cast fait une troncature par défaut):
+- Pour avoir un résultat plus précis, arrondissez la valeur avant de la caster (le cast fait une troncature par défaut):
 
 ```swift
 let roundedValue = floatValue.rounded()
@@ -114,8 +115,8 @@ targetValue = Int.random(in: 1...100)
 
 Actuellement la valeur cible ne change jamais:
 
-- Créér une méthode `startNewRound` qui va:
-  - donner une valuer cible aléatoire
+- Créer une méthode `startNewRound` qui va:
+  - donner une valeur cible aléatoire
   - reset la valeur actuelle à 50
   - reset la valeur du slider à 50
 - Utilisez cette méthode une première fois au début du jeu et à la fin de chaque appel de `showAlert`
@@ -132,7 +133,7 @@ Le jeu fonctionne bien maintenant, ajoutons quelques détails:
 - Afficher 4 phrases différentes dans  le `title` de l'alert en fonction du score obtenu
 - Ajouter un bonus de 100 points si le score est parfait
 - Ajouter un bonus de 50 si le score est presque parfait (une différence de 1)
-- Éxecutez maintenant le démarrage d'un nouveau round seulement après avoir cliqué sur OK: pour cela il faut passer une `lambda` (aussi appelée `closure`) dans le `handler` de l'`UIALertAction` correspondante:
+- Exécutez maintenant le démarrage d'un nouveau round seulement après avoir cliqué sur OK: pour cela il faut passer une `lambda` (aussi appelée `closure`) dans le `handler` de l'`UIALertAction` correspondante:
 
 ```swift
 let action = UIAlertAction(title: "Awesome", style: .default, handler: {
@@ -161,8 +162,8 @@ dismiss(animated: true, completion: nil)
 
 ## Style
 
-- Ajoutez les images (sur ce repo) au projet dans `Assets.xcassets`
-- Ajoutez une image view dans le Storyboard qui prends toute la vue pour le background: déplacez la en haut de la liste de views pour qu'elle passe derrière les autres
+- Ajoutez les [images](./resources/images/) au projet dans `Assets.xcassets` en les glissant 2 par 2 (XCode va comprendre qu'il s'agit de 2 tailles différentes d'un même asset)
+- Ajoutez une ImageView dans le Storyboard qui prends toute la vue pour le background: déplacez la en haut de la liste de Views pour qu'elle passe derrière les autres
 - Stylez les Labels en en sélectionnant plusieurs à la fois:
   - Changez les textes en blanc
   - Ajoutez une ombre noire avec une height de 1
