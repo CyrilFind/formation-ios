@@ -45,7 +45,6 @@
 - Ajouter les Views et utiliser l'IDE pour ne pas trop coder manuellement:
 utiliser le bouton "+" et drag & drop (dans le canvas ou dans le code), `cmd + click`, "embed in HStack/Button/...", `Spacer()`, `.padding(.bottom, 20)`
 
-
 ![image](images/layout_2.png)
 ![image](images/layout_3.png)
 

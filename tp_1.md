@@ -6,7 +6,7 @@
 - Lancez la ▶
 - Ouvrez Main.Storyboard
 - Choisir dans la visualisation le même iPhone que dans le Simulator, passer en paysage.
-- Cliquer sur le bouton  (un carré dans un rond) pour ajouter un bouton
+- Cliquer sur le bouton "+" pour ajouter un bouton
 - Changez son texte: `"Hit Me !"`
 - Dans ViewController, ajouter:
 
