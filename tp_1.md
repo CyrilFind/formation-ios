@@ -97,7 +97,7 @@ Actuellement si vous cliquez sur Hit Me directement après avoir lancé l'app, l
 @IBOutlet weak var slider: UISlider!
 ```
 
-- Si vous lancez, l'app va crasher directement car ici le `!` signifie: "promis, il y a un `UISlider` associé", mais ce n'est pas le cas
+- Si vous utilisez cette variable, l'app va crasher car ici le `!` signifie: "promis, il y a un `UISlider` associé", mais ce n'est pas encore le cas
 - Faites un `Clic droit` sur le slider puis sur "New Referencing Outlet", puis glissez comme précédemment vers le ViewController
 - mettez à jour la valeur de currentValue dans `viewDidLoad()`
 
