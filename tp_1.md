@@ -73,7 +73,7 @@ present(alert, animated: true, completion: nil)
 - Créez une propriété:
 
 ```swift
-val currentValue: Int = 0
+let currentValue: Int = 0
 ```
 
 - Pour stocker dedans la valeur récupérée dans sliderMoved, vous devrez faire un *cast*:
