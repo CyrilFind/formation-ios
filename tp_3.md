@@ -1,8 +1,8 @@
-# TP 3: Swift UI - List
+# TP 3: SwiftUI List
 
 ## Création
 
-- Créer une app "Master-Detail" en choississant SwiftUI
+- Créer une app "Master-Detail" en choisissant "SwiftUI"
 - Lancer l'app pour tester un peu
 
 ## Adaptation
@@ -110,13 +110,33 @@ class Api {
     }
 ```
 
-- Modifiez `ContentViewModel` pour qu'il récupère les tâches de l'API en ajoutant ceci:
+- Ajoutez  `ContentViewModel`:
 
 ```swift
-init() {
+func refresh() {
   Api.getTasks { fetchedTasks in
     self.tasks = fetchedTasks
   }
+}
+```
+
+- Modifiez `ContentView` pour qu'il récupère les tâches de l'API au lancement en ajoutant ceci:
+
+```swift
+.onAppear {
+  self.viewModel.refresh()
+}
+```
+
+- Ajoutez un `Button` dans `ContentView` > `.navigationBarItems` > `trailing:` (avec une `HStack`):
+
+```swift
+Button(action: {
+  withAnimation {
+    self.viewModel.refresh()
+  }
+}) {
+  Image(systemName: "arrow.2.circlepath")
 }
 ```
 
@@ -126,3 +146,4 @@ init() {
 
 - ajout: `..., parameters: task, encoder: JSONParameterEncoder.default, ...`
 - suppression: `"\(BASE_API)/tasks/\(id)", method: .delete, ...`
+- édition: comme l'ajout

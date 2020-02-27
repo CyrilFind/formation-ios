@@ -44,7 +44,7 @@
 ```
 
 - Passer le volet Preview d'XCode en dessous du volet code: `Editor > Layout > Canvas on bottom`
-- Ajouter les `View` et utiliser l'IDE pour ne pas trop coder manuellement: 
+- Ajouter les `View` et utiliser l'IDE pour ne pas trop coder manuellement:
   - Utilisez le bouton "+"
   - Utilisez le drag & drop (dans le canvas ou dans le code)
   - Utilisez la popup `cmd + click`
@@ -113,7 +113,7 @@ let interpolatedString = "Hello \(name)!"
 
 - Ajouter les images dans "assets"
 - ajouter un background: `.background(Image("Background"), alignement: .center)`
-- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` ([référence](iosfontd.com)) avec `.font(Font.custom(...))`
+- Ajouter ombre au text, changer la police du texte principal en `Arial Rounded MT Bold` avec `.font(Font.custom(...))`
 - Faire pareil sur les autres textes, sans copier coller le même code partout: pour cela il faut créer un objet `LabelStyle`
 
 ```swift
