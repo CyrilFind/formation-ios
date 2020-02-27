@@ -43,10 +43,10 @@ Form {
 ### MasterView
 
 - Afficher le `title` seulement dans la liste
-- Créez une classe `ContentViewModel`:
+- Créez une classe `TasksViewModel`:
 
 ```swift
-class ContentViewModel : ObservableObject {
+class TasksViewModel : ObservableObject {
   @Published var tasks = [Task]()
 
   func addTask() {
@@ -62,7 +62,7 @@ class ContentViewModel : ObservableObject {
 - Remplacez `dates` par un `@ObservedObject`:
 
 ```swift
-    @ObservedObject var viewModel = ContentViewModel()
+    @ObservedObject var viewModel = TasksViewModel()
 ```
 
 - Utilisez cette propriété et `addTask` dans l'action du bouton "+"
@@ -110,7 +110,7 @@ class Api {
     }
 ```
 
-- Ajoutez  `ContentViewModel`:
+- Ajoutez  `TasksViewModel`:
 
 ```swift
 func refresh() {
@@ -146,4 +146,4 @@ Button(action: {
 
 - ajout: `..., parameters: task, encoder: JSONParameterEncoder.default, ...`
 - suppression: `"\(BASE_API)/tasks/\(id)", method: .delete, ...`
-- édition: comme l'ajout
+- édition: comme l'ajout 

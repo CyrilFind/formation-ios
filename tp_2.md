@@ -44,16 +44,18 @@
 ```
 
 - Passer le volet Preview d'XCode en dessous du volet code: `Editor > Layout > Canvas on bottom`
+
 - Ajouter les `View` et utiliser l'IDE pour ne pas trop coder manuellement:
-  - Utilisez le bouton "+"
-  - Utilisez le drag & drop (dans le canvas ou dans le code)
-  - Utilisez la popup `cmd + click`
-  - Encapsuler des vues dans une autre: "embed in HStack/Button/..."
-  - Espacer des vues: `Spacer()`
-  - AJouter du padding: `.padding(.bottom, 20)`
 
 ![Views](images/layout_2.png)
 ![Stacks](images/layout_3.png)
+
+- Utilisez le bouton "+"
+- Utilisez le drag & drop (dans le canvas ou dans le code)
+- Utilisez la popup `cmd + click`
+- Encapsuler des vues dans une autre: "embed in HStack/Button/..."
+- Espacer des vues: `Spacer()`
+- Ajouter du padding: `.padding(.bottom, 20)`
 
 ## Gameplay
 
@@ -90,7 +92,7 @@ let interpolatedString = "Hello \(name)!"
 - Ajouter une variable d'état qui sera le nombre à cibler, généré aléatoirement:
 
 ```swift
-@state var target = Int.random(1..100)
+@State var target = Int.random(1..100)
 ```
 
 - Implémenter le calcul de `pointsForCurrentRound(`
@@ -171,4 +173,4 @@ contentView = NavigationView {
 
 - Mettre toute la `VStack` dans un `Group` pour setter le `.background()` dessus afin que le background prenne toute la place disponible.
 - Ajouter une icône à l'application
-- Tester sur d'autres tailles d'écrans: normalement, ça ne devrait rien changer !
+- Tester sur d'autres tailles d'écrans: normalement, ça ne devrait rester propre !
